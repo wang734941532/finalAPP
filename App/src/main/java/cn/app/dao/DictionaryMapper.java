@@ -20,4 +20,6 @@ public interface DictionaryMapper {
     public List<Dictionary> getDictionaryListByStatus();
     
     public List<Dictionary> getAppStatus();
+    
+    public List<Dictionary> getAppFlatForm();
 }

@@ -13,4 +13,8 @@
   select * from app_category
   
   </select>
+  
+  <select id="getSortOne"  resultType="Category">
+   select * from app_category where id = 1 or id 2
+  </select>
 </mapper>

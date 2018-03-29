@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.app.pojo.Category;
 import cn.app.pojo.Dictionary;
 import cn.app.service.CategoryService;
 import cn.app.service.DictionaryService;
@@ -96,5 +97,23 @@ public class AjaxController {
 		
 		//return "{\"msg\":\"true\"}";
 		return appStatusList;
+	}
+	
+	@RequestMapping(value="/flatform",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Dictionary> verify4(){
+		List<Dictionary> appFormList = dictionaryService.getAppFlatForm();
+		
+		//return "{\"msg\":\"true\"}";
+		return appFormList;
+	}
+	
+	@RequestMapping(value="/sort1",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Category> verify5(){
+		List<Category> appSortOne = categoryService.getSortOne();
+		
+		//return "{\"msg\":\"true\"}";
+		return appSortOne;
 	}
 }

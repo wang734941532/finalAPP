@@ -40,6 +40,8 @@
    <script type="text/javascript">
    
    $(function(){
+	   
+	   //APP状态
 	   $("#app_state").click(function(){
 		 //  alert("come into");
 		    $.ajax({
@@ -71,6 +73,63 @@
 		   
 	   });
 	   
+	   
+	   //APP平台
+	   $("#platform").click(function(){
+			 //  alert("come into");
+			    $.ajax({
+					url:"${pageContext.request.contextPath}/flatform",
+					type:"GET",
+					success:function(data){
+						if(data!=null){
+							
+							//alert("result");
+							//$("#app_state").removeChild();
+							$("#platform").find("option").remove();
+							console.log(data[1]);
+							 for(var i = 0; i<data.length; i++){
+								var $opt = $("<option></option>").html(data[i].valuename)
+																 .attr("value",data[i].id);
+								 if(i == 0){
+									$opt.attr("selected",true);
+								} 
+								$("#platform").append($opt);
+							} 
+						}
+					}
+				}) 
+			   
+		   });
+	   
+		   //一级分类
+	   
+	   $("#sort1").click(function(){
+			 //  alert("come into");
+			    $.ajax({
+					url:"${pageContext.request.contextPath}/sort1",
+					type:"GET",
+					success:function(data){
+						if(data!=null){
+							
+							//alert("result");
+							//$("#app_state").removeChild();
+							$("#sort1").find("option").remove();
+							console.log(data[1]);
+							 for(var i = 0; i<data.length; i++){
+								var $opt = $("<option></option>").html(data[i].categoryname)
+																 .attr("value",data[i].id);
+								 if(i == 0){
+									$opt.attr("selected",true);
+								} 
+								$("#sort1").append($opt);
+							} 
+						}
+					}
+				}) 
+			   
+		   });
+		   
+		   
    });
    
    
@@ -222,10 +281,7 @@
      				</select>&nbsp; &nbsp; 
      				
             所属平台<select name="platform" id="platform" style="border: 2px solid black;  border-radius: 5px;width: 180px;height: 26px;">
-     						<option>--请选择--</option>
-     					<option>1</option>
-     						<option>1</option>
-     							<option>1</option>
+     					
      				</select>&nbsp; &nbsp; 
      				
          		一级分类<select name="sort1" id="sort1" style="border: 2px solid black;  border-radius: 5px;width: 180px;height: 26px;">

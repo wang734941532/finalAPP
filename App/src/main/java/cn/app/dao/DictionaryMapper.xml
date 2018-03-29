@@ -9,4 +9,8 @@
   <select id="getAppStatus" resultType="Dictionary">
    SELECT * FROM data_dictionary WHERE typeCode = 'APP_STATUS'
   </select>
+  
+  <select id="getAppFlatForm"  resultType="Dictionary">
+   SELECT * FROM data_dictionary WHERE typeCode = 'APP_FLATFORM'     
+  </select>
 </mapper>

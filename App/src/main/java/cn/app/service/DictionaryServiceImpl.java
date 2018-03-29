@@ -32,4 +32,10 @@ public class DictionaryServiceImpl implements DictionaryService {
 		return dictionaryMapper.getAppStatus();
 	}
 
+	@Override
+	public List<Dictionary> getAppFlatForm() {
+		
+		return dictionaryMapper.getAppFlatForm();
+	}
+
 }

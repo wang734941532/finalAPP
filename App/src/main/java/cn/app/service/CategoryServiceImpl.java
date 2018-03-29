@@ -29,6 +29,12 @@ public class CategoryServiceImpl implements CategoryService {
 		return catList;
 	}
 
+	@Override
+	public List<Category> getSortOne() {
+		
+		return  categoryMapper.getSortOne();
+	}
+
 	
 	
 }
