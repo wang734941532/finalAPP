@@ -7,5 +7,7 @@ import cn.app.pojo.Dictionary;
 public interface DictionaryService {
 	
 	 public List<Dictionary> getDictionaryListByStatus();
+	 //ÓÃÓÚajax²éÑ¯APP×´Ì¬
+	 public List<Dictionary> getAppStatus();
 
 }

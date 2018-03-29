@@ -47,7 +47,7 @@ public class Information {
     private Date creationdate;
 
     private Long modifyby;
-
+    
     private Date modifydate;
 
     private Long categorylevel1;

@@ -26,4 +26,10 @@ public class DictionaryServiceImpl implements DictionaryService {
 		return dicList;
 	}
 
+	@Override
+	public List<Dictionary> getAppStatus() {
+		
+		return dictionaryMapper.getAppStatus();
+	}
+
 }

@@ -18,4 +18,6 @@ public interface InfoService {
 	
 	
 	 int updateStatus(int value,int id);
+	 
+	 List<Information> getInfoList();
 }

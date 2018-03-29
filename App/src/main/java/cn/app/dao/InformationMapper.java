@@ -29,4 +29,7 @@ public interface InformationMapper {
     
     int updateStatus(@Param("value")int value,
     		@Param("id")int id);
+    
+    List<Information> getInfoList();
+    
 }

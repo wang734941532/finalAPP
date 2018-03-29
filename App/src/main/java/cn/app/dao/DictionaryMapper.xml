@@ -5,4 +5,8 @@
      SELECT * FROM  data_dictionary LIMIT 5,5
    
   </select>
+  
+  <select id="getAppStatus" resultType="Dictionary">
+   SELECT * FROM data_dictionary WHERE typeCode = 'APP_STATUS'
+  </select>
 </mapper>

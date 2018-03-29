@@ -22,9 +22,61 @@
 
     <!-- Custom Theme Style -->
     <link href="${pageContext.request.contextPath }/statics/css/custom.min.css" rel="stylesheet">
-    <style type="text/css">
     
-    </style>
+    <!-- jQuery -->
+    <script src="${pageContext.request.contextPath }/statics/js/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="${pageContext.request.contextPath }/statics/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="${pageContext.request.contextPath }/statics/js/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="${pageContext.request.contextPath }/statics/js/nprogress.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="${pageContext.request.contextPath }/statics/js/custom.min.js"></script>
+    
+   
+   
+   <script type="text/javascript">
+   
+   $(function(){
+	   $("#app_state").click(function(){
+		 //  alert("come into");
+		    $.ajax({
+				url:"${pageContext.request.contextPath}/status",
+				type:"GET",
+				success:function(data){
+					if(data!=null){
+						//$("#app_state").removeChild();
+						//alert("result");
+						console.log(data[1]);
+						 for(var i = 0; i<data.length; i++){
+							var $opt = $("<option></option>").html(data[i].valuename)
+															 .attr("value",data[i].id);
+							 if(i == 0){
+								$opt.attr("selected",true);
+							} 
+							
+							$("#app_state").append($opt);
+						} 
+						
+						//window.location.href="${pageContext.request.contextPath}/manager/validate";
+					}
+				}
+			}) 
+			/*  var txt1="<p>文本。</p>"; 
+			 var $opt = $("<option></option>").html("22222222")
+			 .attr("value",222);
+		   $("#app_state").append($opt); */
+		   
+	   });
+	   
+   });
+   
+   
+   
+   </script>
+   
     
 </head>
  <body class="nav-md">
@@ -166,10 +218,7 @@
              软件名称<input type="text"  style="border: 2px solid black; border-radius: 5px;"/> &nbsp; &nbsp; 
              
      				APP状态<select name="app_state" id="app_state" style="border: 2px solid black;  border-radius: 5px;width: 180px;height: 26px;">
-     						<option>--请选择--</option>
-     					<option>1</option>
-     						<option>1</option>
-     							<option>1</option>
+     						
      				</select>&nbsp; &nbsp; 
      				
             所属平台<select name="platform" id="platform" style="border: 2px solid black;  border-radius: 5px;width: 180px;height: 26px;">
@@ -304,16 +353,6 @@
       </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="${pageContext.request.contextPath }/statics/js/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="${pageContext.request.contextPath }/statics/js/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="${pageContext.request.contextPath }/statics/js/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="${pageContext.request.contextPath }/statics/js/nprogress.js"></script>
-
-    <!-- Custom Theme Scripts -->
-    <script src="${pageContext.request.contextPath }/statics/js/custom.min.js"></script>
+    
   </body>
 </html>

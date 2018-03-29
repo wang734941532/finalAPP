@@ -20,10 +20,64 @@
 
     <!-- Custom Theme Style -->
     <link href="${pageContext.request.contextPath }/statics/css/custom.min.css" rel="stylesheet">
-    <style type="text/css">
     
-    </style>
     
+     <!-- jQuery -->
+    <script src="${pageContext.request.contextPath }/statics/js/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="${pageContext.request.contextPath }/statics/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="${pageContext.request.contextPath }/statics/js/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="${pageContext.request.contextPath }/statics/js/nprogress.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="${pageContext.request.contextPath }/statics/js/custom.min.js"></script>
+    
+    
+<% 
+String path = request.getContextPath(); 
+String basePath = request.getScheme() + "://" 
++ request.getServerName() + ":" + request.getServerPort() 
++ path + "/";//返回形式http://localhost:8080/upload/ 
+%> 
+     	<script type="text/javascript">
+     	$(function(){
+			var p = $(".passornot").val();
+			
+			$(".ooo").click(function(){
+				$.ajax({
+					url:"${pageContext.request.contextPath}/verify/"+p,
+					type:"GET",
+					success:function(result){
+						if(result==true){
+							alert("审核通过");
+							//window.location.href="${pageContext.request.contextPath}/manager/validate";
+						}
+					}
+				})
+				
+			});
+			
+			$(".qqq").click(function(){
+
+				$(".ooo").click(function(){
+					$.ajax({
+						url:"${pageContext.request.contextPath}/verifyNo/"+p,
+						type:"GET",
+						success:function(result){
+							if(result==true){
+								alert("审核不通过");
+								//window.location.href="${pageContext.request.contextPath}/manager/validate";
+							}
+						}
+					})
+					
+				});
+				
+			});
+		});
+	</script>
 </head>
  <body class="nav-md">
     <div class="container body">
@@ -159,7 +213,7 @@
               		</div><!--题目2title  end-->
               		<div class="x_content"><!--APP基础信息内容content-->
                     <br />
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form id="demo-form2" data-parsley-validate  class="form-horizontal form-label-left">
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="softName">软件名称<span class="required">*</span>
@@ -256,17 +310,19 @@
                         	<img src="${info.logopicpath }" style="width:60px;height:60px"/>
                         </div>
                       </div>
-                      <div class="form-group">
-												<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-													<button type="submit" class="btn btn-success"><a href="${pageContext.request.contextPath }/manager/verify?vy=1&id=${info.id}">审核通过</a></button>
-													<button type="submit" class="btn btn-success"><a href="${pageContext.request.contextPath }/manager/verify?vy=0&id=${info.id}">审核不通过</a></button>
-													<button type="submit" class="btn btn-primary"><a href="${pageContext.request.contextPath }/manager/validate">返回</a></button>
-												</div>
-											</div>
+                    
                     </form>
                   </div>
                   <!--APP基础信息内容content end-->
-              		
+              		  <div class="form-group">
+                     
+												<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+				<button type="submit" class="btn btn-success ooo" >审核通过</button>
+				<input type="hidden" name="no1" value="${info.id }" class="passornot">
+				<button type="submit" class="btn btn-success qqq">审核不通过</button>
+				<button type="submit" class="btn btn-primary"><a href="${pageContext.request.contextPath }/manager/validate">返回</a></button>
+												</div>
+											</div>
               		
               		
                   <div class="x_title"><!--题目3title-->
@@ -337,16 +393,6 @@
       </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="${pageContext.request.contextPath }/statics/js/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="${pageContext.request.contextPath }/statics/js/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="${pageContext.request.contextPath }/statics/js/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="${pageContext.request.contextPath }/statics/js/nprogress.js"></script>
-
-    <!-- Custom Theme Scripts -->
-    <script src="${pageContext.request.contextPath }/statics/js/custom.min.js"></script>
+   
   </body>
 </html>
