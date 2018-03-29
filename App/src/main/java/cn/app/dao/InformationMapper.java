@@ -32,4 +32,9 @@ public interface InformationMapper {
     
     List<Information> getInfoList();
     
+    
+    //≤È—Ø∞¥≈•
+    List<Information> queryInfo(String softName,int sort3);
+    
+    
 }

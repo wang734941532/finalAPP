@@ -24,4 +24,8 @@ public interface CategoryMapper {
     
     List<Category> getSortOne();
     
+    List<Category> getSortTwo(int ParentId);
+    
+    
+    
 }

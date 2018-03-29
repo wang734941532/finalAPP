@@ -35,6 +35,12 @@ public class CategoryServiceImpl implements CategoryService {
 		return  categoryMapper.getSortOne();
 	}
 
+	@Override
+	public List<Category> getSortTwo(int ParentId) {
+		
+		return categoryMapper.getSortTwo(ParentId);
+	}
+
 	
 	
 }

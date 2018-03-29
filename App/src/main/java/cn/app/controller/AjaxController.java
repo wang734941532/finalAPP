@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.app.pojo.Category;
 import cn.app.pojo.Dictionary;
+import cn.app.pojo.Information;
 import cn.app.service.CategoryService;
 import cn.app.service.DictionaryService;
 import cn.app.service.InfoService;
@@ -116,4 +117,35 @@ public class AjaxController {
 		//return "{\"msg\":\"true\"}";
 		return appSortOne;
 	}
+	
+	@RequestMapping(value="/sort2",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Category> verify6(int sort1option){
+		List<Category> appSortTwo = categoryService.getSortTwo(sort1option);
+		
+		//return "{\"msg\":\"true\"}";
+		return appSortTwo;
+	}
+	
+	
+	@RequestMapping(value="/sort3",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Category> verify7(int sort2option){
+		List<Category> appSortThree = categoryService.getSortTwo(sort2option);
+		
+		//return "{\"msg\":\"true\"}";
+		return appSortThree;
+	}
+	
+	
+	@RequestMapping(value="/query",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Information> verify8(int sort3option,String softName){
+		List<Information> queryInfo = infoService.queryInfo(softName, sort3option);
+		
+		//return "{\"msg\":\"true\"}";
+		return queryInfo;
+	}
+	
+	
 }

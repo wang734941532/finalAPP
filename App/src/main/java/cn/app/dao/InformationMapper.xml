@@ -37,5 +37,10 @@
   select * from app_info
   </select>
   
+  <select id="queryInfo" resultType="Information">
+  
+  SELECT * FROM app_info WHERE softwareName LIKE  CONCAT('%',#{softName},'%') AND categoryLevel3 = #{sort3} 
+  </select>
+  
   
 </mapper>
