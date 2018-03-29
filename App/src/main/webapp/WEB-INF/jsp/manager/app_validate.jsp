@@ -47,8 +47,10 @@
 				type:"GET",
 				success:function(data){
 					if(data!=null){
-						//$("#app_state").removeChild();
+						
 						//alert("result");
+						//$("#app_state").removeChild();
+						$("#app_state").find("option").remove();
 						console.log(data[1]);
 						 for(var i = 0; i<data.length; i++){
 							var $opt = $("<option></option>").html(data[i].valuename)
@@ -56,10 +58,8 @@
 							 if(i == 0){
 								$opt.attr("selected",true);
 							} 
-							
 							$("#app_state").append($opt);
 						} 
-						
 						//window.location.href="${pageContext.request.contextPath}/manager/validate";
 					}
 				}
