@@ -1,15 +1,20 @@
 package cn.app.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.http.HttpSession;
+import javax.servlet.jsp.PageContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.app.pojo.Category;
 import cn.app.pojo.Dictionary;
@@ -201,25 +206,25 @@ public class BackController {
 	
 	
 	
-	@RequestMapping("/verify")
-	public String verify(int vy,int id){
-		int count ; 
-		if(vy == 1){
-			int value = 2;
-			count = infoService.updateStatus(value, id);
-			
-			
-		}else{
-			
-			int value = 3;
-			count = infoService.updateStatus(value, id);
-			
-		}
+	/*@RequestMapping(value="/verify",method=RequestMethod.GET)
+	@ResponseBody
+	public String verify(){
+		System.out.println("ssss");
 		
+		return "true";
+	}*/
+	
+	
+	
+	
+	@RequestMapping(value="/verifyNo",method=RequestMethod.POST)
+	@ResponseBody
+	public String verify2(int id){
+		int value =3;
+		int count = infoService.updateStatus(value, id);
+		System.out.println(count);
 		
-		return "manager/app_validate";
+		return "true";
 	}
-	
-	
 	
 }

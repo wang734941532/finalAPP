@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import cn.app.dao.InformationMapper;
 import cn.app.pojo.Information;
 
 @Service("infoService")
+@Transactional
 public class InfoServiceImpl implements InfoService {
 
 	@Autowired
@@ -64,8 +66,24 @@ public class InfoServiceImpl implements InfoService {
 	@Override
 	public int updateStatus(int value, int id) {
 		int count = informationMapper.updateStatus(value, id);
-		
+		System.out.println(count);
+		System.out.println(value);
+		System.out.println(id);
 		return count;
+	}
+
+
+	@Override
+	public List<Information> getInfoList() {
+		
+		return informationMapper.getInfoList();
+	}
+
+
+	@Override
+	public List<Information> queryInfo(String softName, int sort3) {
+		// TODO Auto-generated method stub
+		return informationMapper.queryInfo(softName, sort3);
 	}
 
 }

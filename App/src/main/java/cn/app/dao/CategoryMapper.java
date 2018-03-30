@@ -21,4 +21,11 @@ public interface CategoryMapper {
     Category getCategoryById(int id );
     
     List<Category> getCategoryList();
+    
+    List<Category> getSortOne();
+    
+    List<Category> getSortTwo(int ParentId);
+    
+    
+    
 }

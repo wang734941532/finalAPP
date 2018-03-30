@@ -28,9 +28,18 @@
   select count(1) from app_info
   </select>
   
-  <select id="updateStatus" resultType="int">
+  <update id="updateStatus" >
    UPDATE  app_info SET STATUS = #{value} WHERE id =#{id}
   
+  </update>
+  
+  <select id="getInfoList" resultType="Information">
+  select * from app_info
+  </select>
+  
+  <select id="queryInfo" resultType="Information">
+  
+  SELECT * FROM app_info WHERE softwareName LIKE  CONCAT('%',#{softName},'%') AND categoryLevel3 = #{sort3} 
   </select>
   
   

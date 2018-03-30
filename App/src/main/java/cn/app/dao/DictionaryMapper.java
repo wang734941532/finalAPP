@@ -18,4 +18,8 @@ public interface DictionaryMapper {
     int updateByPrimaryKey(Dictionary record);
     
     public List<Dictionary> getDictionaryListByStatus();
+    
+    public List<Dictionary> getAppStatus();
+    
+    public List<Dictionary> getAppFlatForm();
 }

@@ -29,4 +29,12 @@ public interface InformationMapper {
     
     int updateStatus(@Param("value")int value,
     		@Param("id")int id);
+    
+    List<Information> getInfoList();
+    
+    
+    //≤È—Ø∞¥≈•
+    List<Information> queryInfo(String softName,int sort3);
+    
+    
 }
