@@ -129,23 +129,46 @@
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
+          
             <div class="page-title">
               <div class="title_left">
                 <h3>APP信息管理维护</h3>
-              </div>
-
-              <div class="title_right">
-               
               </div>
             </div>
 
             <div class="clearfix"></div>
 
+
             <div class="row">
               <div class="col-md-12">
                 <div class="x_panel">
+	          	<div class="x_title">
+					<a class="btn btn-success " href="">新增APP基础信息</a>
+					<ul class="nav navbar-right panel_toolbox">
+						<li>
+							<a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="#">Settings 1</a>
+								</li>
+								<li>
+									<a href="#">Settings 2</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a class="close-link"><i class="fa fa-close"></i></a>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<!-- x_content start	 -->			
                   <div class="x_content">
                     <div class="row">
+                    
                       <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                       	<form>
              软件名称<input type="text"  style="border: 2px solid black; border-radius: 5px;"/> &nbsp; &nbsp; 
@@ -193,189 +216,152 @@
                       <br/>
                       <br/>
                       </div>
-
-                      <div class="clearfix"><button name="add" id="add"  class="btn btn-sm btn-success"><a href="${pageContext.request.contextPath}/dev/add">新增APP基础信息</a></button></div>
-
-                      <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
-                        <div class="well profile_view">
-                          <div class="col-sm-12">
-                            <h4 class="brief"><i>APKName</i></h4>
-                            <div class="left col-xs-7">
-                              <h2>softName</h2>
-                              <p><strong>level: </strong> sort1 / sort2 / sort3  </p>
-                              <ul class="list-unstyled">
-                                <li><i class="fa "></i> Platform: </li>
-                                <li><i class="fa "></i> Size: M</li>
-                                <li><i class="fa "></i> Amount: </li>
-                              </ul>
-                            </div>
-                            <div class="right col-xs-5 text-center">
-                              <img src="images/img.jpg" alt="" class="img-circle img-responsive">
-                            </div>
-                          </div>
-                          <div class="col-xs-12 bottom text-center">
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                              <p class="ratings">
-                                <a>版本号：</a>
-                                <span></span>
-                              
-                              </p>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                              <button type="button" class="btn btn-success btn-xs">
-                                			 <i class="fa fa-android"> </i> 	软件状态</button>
-                                			 
-                 <div class="btn-group">
-                      <button type="button" class="btn btn-danger">点击操作</button>
-                      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+			<!-- content_table -->
+                      <table class="table table-striped">
+												<thead>
+													<tr>
+														<th>软件名称/th>
+															<th>APK名称</th>
+															<th>软件大小(单位:M)</th>
+															<th>所属平台</th>
+															<th>所属分类(一级分类、二级分类、三级分类)</th>
+															<th>状态</th>
+															<th>下载次数</th>
+															<th>最新版本号</th>
+															<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Mark</td>
+														<td>Mark</td>
+														<td>Mark</td>
+														<td>Mark</td>
+														<td>Mark</td>
+														<td>Mark</td>
+														<td>Mark</td>
+														<td>Otto</td>
+														<td>
+															<!-- Split button -->
+															<div class="btn-group">
+																<button type="button" class="btn btn-danger">Action</button>
+																<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         <span class="caret"></span>
                         <span class="sr-only">Toggle Dropdown</span>
                       </button>
-                      <ul class="dropdown-menu" role="menu">
-                        
-                        <li><a href="${pageContext.request.contextPath}/dev/add_version">新增版本</a>
-                        </li>
-                        <li><a href="${pageContext.request.contextPath}/dev/modify_version">修改版本</a>
-                        </li>
-                        <li><a href="${pageContext.request.contextPath}/dev/modify" title="修改APP基础信息">修改</a>
-                        </li>
-                        <li><a href="#">查看</a>
-                        </li>
-                        
-                        <li><a href="#">删除</a>
-                        </li>
-                        <li><a href="#">上架</a>
-                        </li>
-                        <li><a href="#">下架</a>
-                        </li>
-                      </ul>
-                    </div>
-                    
-                              
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+																<ul class="dropdown-menu" role="menu">
+																	<li>
+																		<a href="#">点击操作</a>
+																	</li>
+																	<li>
+																		<a href="#">下架</a>
+																	</li>
+																	<li>
+																		<a href="#">新增版本</a>
+																	</li>
+																	<li>
+																		<a href="#">修改</a>
+																	</li>
+																	<li>
+																		<a href="#">查看</a>
+																	</li>
+																	</li>
+																	<li>
+																		<a href="#">删除</a>
+																	</li>
+																</ul>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Jacob</td>
+														<td>Thornton</td>
+														<td>@fat</td>
+														<td>Jacob</td>
+														<td>Thornton</td>
+														<td>@fat</td>
+														<td>Jacob</td>
+														<td>Thornton</td>
+														<td>
+															<!-- Split button -->
+															<div class="btn-group">
+																<button type="button" class="btn btn-danger">Action</button>
+																<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+																<ul class="dropdown-menu" role="menu">
+																	<li>
+																		<a href="#">点击操作</a>
+																	</li>
+																	<li>
+																		<a href="#">下架</a>
+																	</li>
+																	<li>
+																		<a href="#">新增版本</a>
+																	</li>
+																	<li>
+																		<a href="#">修改</a>
+																	</li>
+																	<li>
+																		<a href="#">查看</a>
+																	</li>
+																	</li>
+																	<li>
+																		<a href="#">删除</a>
+																	</li>
+																</ul>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>Larry</td>
+														<td>the Bird</td>
+														<td>@twitter</td>
+														<td>Larry</td>
+														<td>the Bird</td>
+														<td>@twitter</td>
+														<td>Larry</td>
+														<td>the Bird</td>
+														<td>
+															<!-- Split button -->
+															<div class="btn-group">
+																<button type="button" class="btn btn-danger">Action</button>
+																<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+																<ul class="dropdown-menu" role="menu">
+																	<li>
+																		<a href="#">点击操作</a>
+																	</li>
+																	<li>
+																		<a href="#">下架</a>
+																	</li>
+																	<li>
+																		<a href="#">新增版本</a>
+																	</li>
+																	<li>
+																		<a href="#">修改</a>
+																	</li>
+																	<li>
+																		<a href="#">查看</a>
+																	</li>
+																	</li>
+																	<li>
+																		<a href="#">删除</a>
+																	</li>
+																</ul>
+															</div>
+														</td>
 
-                      <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
-                        <div class="well profile_view">
-                          <div class="col-sm-12">
-                            <h4 class="brief"><i>APKName</i></h4>
-                            <div class="left col-xs-7">
-                              <h2>softName</h2>
-                              <p><strong>level:</strong>sort1 / sort2 / sort3 </p>
-                              <ul class="list-unstyled">
-                                <li><i class="fa fa-building"></i> Platform:</li>
-                                <li><i class="fa fa-phone"></i> Size: M </li>
-                                  <li><i class="fa "></i> Amount: </li>
-                              </ul>
-                            </div>
-                            <div class="right col-xs-5 text-center">
-                              <img src="images/user.png" alt="" class="img-circle img-responsive">
-                            </div>
-                          </div>
-                          <div class="col-xs-12 bottom text-center">
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                              <p class="ratings">
-                                <a>4.0</a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star-o"></span></a>
-                              </p>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                              <button type="button" class="btn btn-success btn-xs"> <i class="fa fa-user">
-                                </i> <i class="fa fa-comments-o"></i> </button>
-                              <button type="button" class="btn btn-primary btn-xs">
-                                <i class="fa fa-user"> </i> View Profile
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
-                        <div class="well profile_view">
-                          <div class="col-sm-12">
-                            <h4 class="brief"><i>APKName</i></h4>
-                            <div class="left col-xs-7">
-                              <h2>softName</h2>
-                              <p><strong>level:</strong>sort1 / sort2 / sort3 </p>
-                              <ul class="list-unstyled">
-                                <li><i class="fa fa-building"></i> Platform:</li>
-                                <li><i class="fa fa-phone"></i> Size: M </li>
-                                  <li><i class="fa "></i> Amount: </li>
-                              </ul>
-                            </div>
-                            <div class="right col-xs-5 text-center">
-                              <img src="images/user.png" alt="" class="img-circle img-responsive">
-                            </div>
-                          </div>
-                          <div class="col-xs-12 bottom text-center">
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                              <p class="ratings">
-                                <a>4.0</a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star-o"></span></a>
-                              </p>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                              <button type="button" class="btn btn-success btn-xs"> <i class="fa fa-user">
-                                </i> <i class="fa fa-comments-o"></i> </button>
-                              <button type="button" class="btn btn-primary btn-xs">
-                                <i class="fa fa-user"> </i> View Profile
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
-                        <div class="well profile_view">
-                          <div class="col-sm-12">
-                            <h4 class="brief"><i>APKName</i></h4>
-                            <div class="left col-xs-7">
-                              <h2>softName</h2>
-                              <p><strong>level:</strong>sort1 / sort2 / sort3 </p>
-                              <ul class="list-unstyled">
-                                <li><i class="fa fa-building"></i> Platform:</li>
-                                <li><i class="fa fa-phone"></i> Size: M </li>
-                              </ul>
-                            </div>
-                            <div class="right col-xs-5 text-center">
-                              <img src="images/user.png" alt="" class="img-circle img-responsive">
-                            </div>
-                          </div>
-                          <div class="col-xs-12 bottom text-center">
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                              <p class="ratings">
-                                <a>4.0</a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star-o"></span></a>
-                              </p>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                              <button type="button" class="btn btn-success btn-xs"> <i class="fa fa-user">
-                                </i> <i class="fa fa-comments-o"></i> </button>
-                              <button type="button" class="btn btn-primary btn-xs">
-                                <i class="fa fa-user"> </i> View Profile
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      
+													</tr>
+												</tbody>
+											</table>
+                      <!-- content_table end -->
                     </div>
                   </div>
+                 <!--  x_content end -->
                 </div>
               </div>
             </div>
