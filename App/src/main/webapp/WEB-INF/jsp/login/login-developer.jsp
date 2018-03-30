@@ -32,6 +32,7 @@
 						</div>
 
 						<div class="separator">
+							<a href="${pageContext.request.contextPath }/register">新用户，请注册</a>
 							<br />
 							<div>
 								<p>©2018 All Rights Reserved. </p>
