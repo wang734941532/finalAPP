@@ -108,15 +108,15 @@ public class AjaxController {
 		//return "{\"msg\":\"true\"}";
 		return appFormList;
 	}
-	
-	@RequestMapping(value="/sort1",method=RequestMethod.GET)
+	@RequestMapping(value="/levelOne",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Category> verify5(){
+		//List<Dictionary> appFormList = dictionaryService.getAppFlatForm();
 		List<Category> appSortOne = categoryService.getSortOne();
-		
 		//return "{\"msg\":\"true\"}";
 		return appSortOne;
 	}
+	
 	
 	@RequestMapping(value="/sort2",method=RequestMethod.GET)
 	@ResponseBody

@@ -105,15 +105,12 @@
 		   //一级分类
 	   
 	   $("#sort1").click(function(){
-			 //  alert("come into");
+			 
 			    $.ajax({
-					url:"${pageContext.request.contextPath}/sort1",
+					url:"${pageContext.request.contextPath}/levelOne",
 					type:"GET",
 					success:function(data){
 						if(data!=null){
-							
-							//alert("result");
-							//$("#app_state").removeChild();
 							$("#sort1").find("option").remove();
 							console.log(data[1]);
 							 for(var i = 0; i<data.length; i++){
@@ -391,19 +388,39 @@
      				
          		一级分类<select name="sort1" id="sort1" style="border: 2px solid black;  border-radius: 5px;width: 180px;height: 26px;">
      						<option>--请选择--</option>
-     					
+     					 <option>--请选择--</option>
      				</select>&nbsp; &nbsp; 
      				
      				
     				二级分类<select name="sort2" id="sort2" style="border: 2px solid black;  border-radius: 5px;width: 180px;height: 26px;">
      						<option>--请选择--</option>
+     					<option>--请选择--</option>
+     					<option>--请选择--</option>
+     					<option>--请选择--</option>
      					
+     					<option>--请选择--</option>
+     					<option>--请选择--</option>
+     					<option>--请选择--</option>
+     					<option>--请选择--</option>
+     					<option>--请选择--</option>
+     					<option>--请选择--</option>
+     					<option>--请选择--</option>
+     					
+     					<option>--请选择--</option>
+     					<option>--请选择--</option>
+     					<option>--请选择--</option>
+     					<option>--请选择--</option>
+     					<option>--请选择--</option>
      				</select>&nbsp; &nbsp; 
      				
      				
    					  三级分类<select name="sort3" id="sort3" style="border: 2px solid black;  border-radius: 5px;width: 180px;height: 26px;">
      						<option>--请选择--</option>
-     					
+     					<option>--请选择--</option>
+     					<option>--请选择--</option>
+     					<option>--请选择--</option>
+     					<option>--请选择--</option>
+     					<option>--请选择--</option>
      				</select>&nbsp; &nbsp;
      				
             <input type="submit" id="submit" value="查询"  class="btn btn-sm btn-success"/>
