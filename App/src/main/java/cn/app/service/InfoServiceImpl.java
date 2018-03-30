@@ -81,9 +81,9 @@ public class InfoServiceImpl implements InfoService {
 
 
 	@Override
-	public List<Information> queryInfo(String softName, int sort3) {
+	public List<Information> queryInfo(String softName, int sort1,int sort2,int sort3) {
 		// TODO Auto-generated method stub
-		return informationMapper.queryInfo(softName, sort3);
+		return informationMapper.queryInfo(softName,sort1,sort2,sort3);
 	}
 
 }

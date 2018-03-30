@@ -141,10 +141,10 @@ public class AjaxController {
 	
 	
 	@RequestMapping(value="/query",method=RequestMethod.POST)
-	public String verify8(int app_state,int platform,String softName,int sort2,int sort3,Model model){
+	public String verify8(int app_state,int platform,String softName,int sort1,int sort2,int sort3,Model model){
 		System.out.println(app_state+"========");
 		System.out.println(sort3+"========");
-		List<Information> queryList = infoService.queryInfo(softName, sort3);
+		List<Information> queryList = infoService.queryInfo(softName, sort1,sort2,sort3);
 		System.out.println(platform);
 		System.out.println(sort2);
 		model.addAttribute("queryList", queryList);

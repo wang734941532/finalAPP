@@ -21,5 +21,6 @@ public interface InfoService {
 	 
 	 List<Information> getInfoList();
 	 
-	 List<Information> queryInfo(String softName,int sort3);
-}
+	 List<Information> queryInfo(String softName,int sort1,int sort2,int sort3);
+	 
+} 
