@@ -21,7 +21,7 @@ public class Test_insertUser {
 
 	@Test
 	public void test() {
-		String resource = "mybatis-config.xml";
+		String resource = "mybatis-config2.xml";
 
 		try {
 			InputStream inputStream = Resources.getResourceAsStream(resource);
@@ -35,7 +35,7 @@ public class Test_insertUser {
 				dev_User.setDevemail("123456@163.com");
 				dev_User.setDevinfo("test");
 				int count = session.getMapper(Dev_UserMapper.class).insertUser(dev_User);
-				//session.commit();
+				session.commit();
 				System.out.println("count="+count);
 			} finally {
 				session.close();

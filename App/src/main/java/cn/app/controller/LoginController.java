@@ -101,7 +101,7 @@ parseFormat("sgagfg");*/
 	@RequestMapping(value="/register",method=RequestMethod.POST)
 	public String register2(String devCode,String devName,
 			String devPassword,String devEmail,
-			String devInfo,Model model) {
+			String devInfo) {
 		/*SimpleDateFormat formater=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String newdate=formater.format(new Date());*/
 		
@@ -121,10 +121,8 @@ parseFormat("sgagfg");*/
 		resultRows=dev_UserService.register(dev_User);
 		System.out.println("resultRows====="+resultRows);
 		if(resultRows==1) {
-			model.addAttribute("registerPoint", "注册成功");
 			return "login/login-developer";
 		}else if(resultRows==0) {
-			model.addAttribute("registerPoint", "注册失败");
 			return "login/register";
 		}
 		return "login/register";
