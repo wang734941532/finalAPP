@@ -43,7 +43,7 @@
 	   //隐藏表格
 	   $(".hideTable").hide();
 	   //APP状态
-	   $("#app_state").click(function(){
+	  /*  $("#app_state").click(function(){ */
 		 //  alert("come into");
 		    $.ajax({
 				url:"${pageContext.request.contextPath}/status",
@@ -58,15 +58,13 @@
 						 for(var i = 0; i<data.length; i++){
 							var $opt = $("<option></option>").html(data[i].valuename)
 															 .attr("value",data[i].id);
-							 if(i == 0){
-								$opt.attr("selected",true);
-							} 
+							
 							$("#app_state").append($opt);
 						} 
 						//window.location.href="${pageContext.request.contextPath}/manager/validate";
 					}
 				}
-			}) 
+			/* })  */
 			/*  var txt1="<p>文本。</p>"; 
 			 var $opt = $("<option></option>").html("22222222")
 			 .attr("value",222);
@@ -76,7 +74,7 @@
 	   
 	   
 	   //APP平台
-	   $("#platform").click(function(){
+	  /*  $("#platform").click(function(){ */
 			 //  alert("come into");
 			    $.ajax({
 					url:"${pageContext.request.contextPath}/flatform",
@@ -91,20 +89,18 @@
 							 for(var i = 0; i<data.length; i++){
 								var $opt = $("<option></option>").html(data[i].valuename)
 																 .attr("value",data[i].id);
-								 if(i == 0){
-									$opt.attr("selected",true);
-								} 
+								
 								$("#platform").append($opt);
 							} 
 						}
 					}
 				}) 
 			   
-		   });
-	   
+		/*    });
+	    */
 		   //一级分类
 	   
-	   $("#sort1").click(function(){
+	 /*   $("#sort1").click(function(){ */
 			 
 			    $.ajax({
 					url:"${pageContext.request.contextPath}/levelOne",
@@ -116,20 +112,20 @@
 							 for(var i = 0; i<data.length; i++){
 								var $opt = $("<option></option>").html(data[i].categoryname)
 																 .attr("value",data[i].id);
-								 if(i == 0){
+								/*  if(i == 0){
 									$opt.attr("selected",true);
-								} 
+								}  */
 								$("#sort1").append($opt);
 							} 
 						}
 					}
 				}) 
 			   
-		   });
+	/* 	   }); */
 		   
 		   
 		   //二级分类
-	   $("#sort2").click(function(){
+	    $("#sort1").change(function(){ 
 		   var options=$("#sort1 option:selected").val(); 
 		   console.log(options);
 			 //  alert("come into");
@@ -146,20 +142,18 @@
 							 for(var i = 0; i<data.length; i++){
 								var $opt = $("<option></option>").html(data[i].categoryname)
 																 .attr("value",data[i].id);
-								 if(i == 0){
-									$opt.attr("selected",true);
-								} 
+								
 								$("#sort2").append($opt);
 							} 
 						}
 					}
 				}) 
 			   
-		   });
+		    }); 
 		   
 	 			//三级分类
 	 			
-	   $("#sort3").click(function(){
+	   $("#sort2").change(function(){
 		   var options=$("#sort2 option:selected").val(); 
 		   console.log(options);
 			 //  alert("come into");
@@ -176,9 +170,7 @@
 							 for(var i = 0; i<data.length; i++){
 								var $opt = $("<option></option>").html(data[i].categoryname)
 																 .attr("value",data[i].id);
-								 if(i == 0){
-									$opt.attr("selected",true);
-								} 
+								 
 								$("#sort3").append($opt);
 							} 
 						}
@@ -187,52 +179,6 @@
 			   
 		   });
 	  
-	   //查询
-	   $("#submit").click(function(){
-		   var state=$("#app_state option:selected").val(); 
-		   var plat=$("#platform option:selected").val(); 
-		   
-		   var options=$("#sort3 option:selected").val(); 
-		    var softName = $("#softName").val();
-		   console.log(options);
-		   $(".profile_details").remove();
-			 //  alert("come into");
-			    $.ajax({
-					url:"${pageContext.request.contextPath}/query?sort3option="+options,
-					data:"softName="+softName,
-					type:"GET",
-					success:function(data){
-						if(data!=null){
-							
-							$(".hideTable").show();
-							var table =$(".hideTable");
-				               
-							for(var i=0;data.length;i++){
-								var tr =$("<tr></tr>");
-								tr.appendTo(table);
-								var td1=$("<td>"+softName +"</td>");
-								var td2=$("<td>"+state +"</td>");
-								var td3=$("<td>"+plat +"</td>");
-								var td4=$("<td>"+data[i].softwaresize +"</td>");
-								var td5=$("<td>"+data[i].downloads+"</td>");
-								var td6=$("<td></td>");
-								var butt =$("<button> </button>").attr({"class":"btn btn-sm btn-success","onclick":"window.location.href='${pageContext.request.contextPath }/manager/v_display?id='+data[i].id"}).val("审核");
-								butt.appendTo(td6);
-								td1.appendTo(tr);
-								td2.appendTo(tr);
-								td3.appendTo(tr);
-								td4.appendTo(tr);
-								td5.appendTo(tr);
-								td6.appendTo(tr);
-							}
-							 
-						}
-					}
-				}) 
-			   
-		   });
-	   
-	 
    });
    
    
@@ -375,7 +321,7 @@
                   <div class="x_content">
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                      	<form action="xx" name="b_search" id="b_search">
+                      	 <form action="${pageContext.request.contextPath }/query" name="b_search" id="b_search" method="post"> 
              软件名称<input type="text"  id="softName" style="border: 2px solid black; border-radius: 5px;"/> &nbsp; &nbsp; 
              
      				APP状态<select name="app_state" id="app_state" style="border: 2px solid black;  border-radius: 5px;width: 180px;height: 26px;">
@@ -423,9 +369,9 @@
      					<option>--请选择--</option>
      				</select>&nbsp; &nbsp;
      				
-            <input type="submit" id="submit" value="查询"  class="btn btn-sm btn-success"/>
+            <input type="submit" id="submit"  value="查询"  class="btn btn-sm btn-success"/>
                       		
-                      	</form>
+                    	</form> 
                       <br/>
                       <br/>
                       </div>
@@ -481,7 +427,6 @@
                  <div class="btn-group">
                       <button type="button" class="btn btn-danger"><a href="${pageContext.request.contextPath }/manager/v_display?id=${info.id}"><strong>审核</strong></a></button>
                       
-                      
                     </div>
                               
                             </div>
@@ -490,20 +435,7 @@
                       </div>
   				
   				</c:forEach>
-  				
-              <table border="1" class="hideTable">
-               <tr>
-               
-                 <td>软件名称</td>
-                <td>APP状态</td>
-                 <td> 所属平台</td>
-                  <td>软件大小</td>
-                   <td>下载次数</td>
-                    <td>操作</td>
-                  
-               </tr>
-              
-              </table>
+  			
                     </div>
                   </div>
                 </div>

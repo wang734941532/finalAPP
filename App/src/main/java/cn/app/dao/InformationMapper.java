@@ -34,7 +34,8 @@ public interface InformationMapper {
     
     
     //≤È—Ø∞¥≈•
-    List<Information> queryInfo(String softName,int sort3);
+    List<Information> queryInfo(@Param("softName")String softName,
+    		  					@Param("sort3")int sort3);
     
     
 }

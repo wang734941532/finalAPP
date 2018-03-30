@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -121,6 +122,7 @@ public class AjaxController {
 	@RequestMapping(value="/sort2",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Category> verify6(int sort1option){
+		System.out.println(sort1option);
 		List<Category> appSortTwo = categoryService.getSortTwo(sort1option);
 		
 		//return "{\"msg\":\"true\"}";
@@ -138,13 +140,23 @@ public class AjaxController {
 	}
 	
 	
-	@RequestMapping(value="/query",method=RequestMethod.GET)
-	@ResponseBody
-	public List<Information> verify8(int sort3option,String softName){
-		List<Information> queryInfo = infoService.queryInfo(softName, sort3option);
+	@RequestMapping(value="/query",method=RequestMethod.POST)
+	public String verify8(int app_state,int platform,String softName,int sort2,int sort3,Model model){
+		System.out.println(app_state+"========");
+		System.out.println(sort3+"========");
+		List<Information> queryList = infoService.queryInfo(softName, sort3);
+		System.out.println(platform);
+		System.out.println(sort2);
+		model.addAttribute("queryList", queryList);
+		return "manager/query";
+	}
+	
+	@RequestMapping(value="/result",method=RequestMethod.GET)
+	public String verify9(){
+		System.out.println("22");
 		
-		//return "{\"msg\":\"true\"}";
-		return queryInfo;
+		
+		return "manager/validate";
 	}
 	
 	
