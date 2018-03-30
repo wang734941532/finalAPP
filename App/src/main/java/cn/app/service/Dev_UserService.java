@@ -11,5 +11,10 @@ public interface Dev_UserService {
 	 * @return
 	 */
 	public Dev_User login(String devCode,String devPassword);
-	
+	/**
+	 * 用户注册
+	 * @param Dev_User
+	 * @return integer
+	 */
+	public int register(Dev_User dev_User);
 }

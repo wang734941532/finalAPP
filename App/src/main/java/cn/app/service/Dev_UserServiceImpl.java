@@ -36,4 +36,17 @@ public class Dev_UserServiceImpl implements Dev_UserService {
 		return duser;
 	}
 
+	@Override
+	public int register(Dev_User dev_User) {
+		System.out.println("dev_User================="+dev_User);
+		System.out.println("dev_Usershuxing================="+dev_User.getDevcode());
+		System.out.println("aaa");
+		int resultRows=0;
+		System.out.println("bbb");
+		resultRows=dev_UserMapper.insertUser(dev_User);
+		System.out.println("cccc");
+		System.out.println("usermapper添加用户的执行行数"+resultRows);
+		return resultRows;
+	}
+
 }

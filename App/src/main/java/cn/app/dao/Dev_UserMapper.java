@@ -7,8 +7,8 @@ import cn.app.pojo.Dev_User;
 
 public interface Dev_UserMapper {
     int deleteByPrimaryKey(Long id);
- 
-    int insert(Dev_User record);
+    //添加开发者
+    int insertUser(Dev_User user);
 
     int insertSelective(Dev_User record);
 

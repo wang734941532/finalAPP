@@ -1,5 +1,8 @@
 package cn.app.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
@@ -75,7 +78,7 @@ System.out.println("app,login ============ " );
 		if(null != duser){//登录成功
 			//放入session
 			session.setAttribute("user", duser);
-			session.setAttribute("userCode",duser.getDevcode());
+			session.setAttribute("userCode", duser.getDevcode());
 			session.setAttribute("userName", duser.getDevname());
 			return "redirect:dev/first_display";
 		}else{
@@ -85,6 +88,44 @@ System.out.println("app,login ============ " );
 			return "login/login-developer";
 		}
 		
+	}
+	/*SimpleDateFormat formater =
+            new SimpleDateFormat("yyyy年 MM月dd日");
+  	    String strCurrentTime = formater.format(new Date()); 
+parseFormat("sgagfg");*/
+	@RequestMapping(value="/register",method=RequestMethod.GET)
+	public String register() {
+		return "login/register";
+	}
+	
+	@RequestMapping(value="/register",method=RequestMethod.POST)
+	public String register2(String devCode,String devName,
+			String devPassword,String devEmail,
+			String devInfo) {
+		/*SimpleDateFormat formater=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String newdate=formater.format(new Date());*/
+		
+		/*String开发者帐号 devCode ·String开发者名称 devName  
+		 * ·String开发者密码 devPassword  ·String邮箱 devEmail  
+		 * ·String开发者简介 devInfo（textarea) ·创建时间 creationDate（添加时在代码中写）-->
+			*/
+		Dev_User dev_User=new Dev_User();
+		dev_User.setDevcode(devCode);
+		dev_User.setDevname(devName);
+		dev_User.setDevpassword(devPassword);
+		dev_User.setDevemail(devEmail);
+		dev_User.setDevinfo(devInfo);
+		//dev_User.setCreationdate(new Date());
+		//调用service方法，添加用户
+		int resultRows=0;
+		resultRows=dev_UserService.register(dev_User);
+		System.out.println("resultRows====="+resultRows);
+		if(resultRows==1) {
+			return "login/login-developer";
+		}else if(resultRows==0) {
+			return "login/register";
+		}
+		return "login/register";
 	}
 	
 }
